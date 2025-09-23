@@ -1,0 +1,15 @@
+body{
+    align-content: center;
+    background-color: rgb(94, 244, 154);
+}
+.practica{
+    columns: 3;
+}
+img{
+    height: 150px;
+    width: 150px;
+    display: block;
+}
+h2{
+    color: blue;
+}
