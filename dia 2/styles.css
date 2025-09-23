@@ -1,0 +1,17 @@
+body{
+    background-color: skyblue;
+}
+img{
+    width: 500PX;
+    height: 300px;
+}
+.saludos{
+    font-size: x-large;
+    color: blue;
+}
+h2{
+    color: red;
+}
+h3{
+    color: green;
+}
