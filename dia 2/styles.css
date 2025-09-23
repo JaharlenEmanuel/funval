@@ -1,0 +1,17 @@
+body{
+    
+    background-color: blueviolet;
+}
+img{
+    height: 100px;
+}
+#titulo-principal{
+    justify-content: center;
+color: red;
+}
+.lista{
+    color: yellow;
+}
+a{
+    color: black;
+}
