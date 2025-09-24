@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <form action="" id="formulario">
+      <label for="pepito">Nombre</label>
+      <input type="text" id="pepito" placeholder="Juan Perez" />
+      <label for="edad">Edad</label>
+      <input
+        type="number"
+        id="edad"
+        onkeydown="return event.key !== 'e' && event.key !== 'E' && event.key !== '+' && event.key !== '-'"
+      />
+      <select name="" id="">
+        <option value="">ARGENTINA</option>
+        <option value="">BOLIVIA</option>
+        <option value="">CHILE</option>
+        <option value="">PERU</option>
+      </select>
+      <button>-->
+    <!--  <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Pais</th>
+          <th>edad</th>
+          <th>Recomendacion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Boren Pardo</td>
+          <td>Colombia</td>
+          <td>25</td>
+          <td>SI</td>
+        </tr>
+        <tr>
+          <td>Gerardo Martinez</td>
+          <td>El salvador</td>
+          <td>27</td>
+          <td>Si</td>
+        </tr>
+        <tr>
+          <td>Kevin Rodriguez</td>
+          <td>Bolivia</td>
+          <td>29</td>
+          <td>NO</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <!--div id="contenedor">
+      <div class="contenedor-caja12">
+        <div class="caja caja1">caja 1</div>
+        <div class="caja caja2">caja 2</div>
+      </div>
+      <div class="caja3">caja 3</div>
+    </div-->
+    <!-- el secretario de su barrio necesita su ayuda, el requiere q puedan crear
+    un formulario para q los miembros puenda cordinar una noche de hogar con los
+    misioneros este formualario debera tener apellido de la familia cantidad de
+    miembros de la familia un dropdwn con posibles llamamientos y un input para
+    la fecha y hora q se llevara a cabo la noche de hogar -->
+    <form action="" id="formulario">
+      <h1>Noche de Hogar</h1>
+
+      <label for="apellidos" style="width: 100%">Apellidos de la Familia</label>
+      <input
+        type="text"
+        name="apellidos"
+        id="apellidos"
+        placeholder="Arcela Davis"
+      />
+
+      <label for="miembro">Cantidad de Miembros</label>
+      <input
+        id="miembro"
+        type="number"
+        placeholder="3"
+        onkeydown="return event.key !== 'e' && event.key !== 'E' && event.key !== '+' && event.key !== '-'"
+      />
+      <div>
+        <div>
+          <label for="llamamiento">Tiene Llamamiento?</label>
+
+          <input type="checkbox" name="" id="" />
+
+          <label for="">Ingrese el llamamiento</label><br />
+          <input type="text" />
+        </div>
+        <div>
+          <label for="fecha">Fecha y Hora Disponible</label>
+          <input type="datetime-local" name="fecha" id="fecha" />
+        </div>
+      </div>
+
+      <label for="fecha">Fecha y Hora Disponible</label>
+      <input type="datetime-local" name="fecha" id="fecha" />
+    </form>
+  </body>
+</html>

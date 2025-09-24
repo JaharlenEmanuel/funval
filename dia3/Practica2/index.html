@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="contenedor1">
+      <div class="contenedor2">
+        <div class="logo">
+          <img src="./img/epic.png" alt="Epic Games Logo" />
+        </div>
+
+        <!-- Botones de redes -->
+        <div class="redes">
+          <a href="#" class="social">
+            <img src="./img/facebook.jpeg" alt="Facebook" />
+          </a>
+          <a href="#" class="social">
+            <img src="./img/google.png" alt="Google" />
+          </a>
+          <a href="#" class="social">
+            <img src="./img/play.png" alt="PlayStation" />
+          </a>
+          <a href="#" class="social">
+            <img src="./img/xbox.png" alt="Xbox" />
+          </a>
+          <a href="#" class="social">
+            <img src="./img/nintendo.png" alt="Nintendo Switch" />
+          </a>
+        </div>
+
+        <h3>REGISTRARSE</h3>
+
+        <form>
+          <select required>
+            <option value="">Selecciona tu país</option>
+            <option value="argentina">Argentina</option>
+            <option value="peru">Perú</option>
+            <option value="mexico">México</option>
+            <option value="chile">Chile</option>
+          </select>
+
+          <div class="columna">
+            <input type="text" placeholder="Nombre" required />
+            <input type="text" placeholder="Apellidos" required />
+          </div>
+
+          <input type="text" placeholder="Nombre de usuario" required />
+          <input
+            type="email"
+            placeholder="Dirección de correo electrónico"
+            required
+          />
+          <input type="password" placeholder="Contraseña" required />
+
+          <label>
+            <input type="checkbox" /> Me gustaría recibir noticias, encuestas y
+            ofertas especiales de Epic Games.
+          </label>
+
+          <label>
+            <input type="checkbox" required /> He leído y acepto los
+            <a href="#" class="link">términos de servicio</a>.
+          </label>
+
+          <button type="submit" class="btn">CREAR CUENTA</button>
+        </form>
+
+        <div class="footer">
+          <a href="#" class="link">Política de privacidad</a>
+          <p>
+            ¿Tienes una cuenta de Epic Games?
+            <a href="#" class="link">Iniciar sesión</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
