@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0%;
+}
+.principal{
+    height: 10%;
+    margin: 0%;
+}
+.cabecera {
+  background-color: red;
+  color: white;
+  height: 50%;
+}
+.navegador{
+    background-color: blue;
+  color: white;
+  height: 50%;
+}
+.contenedor{
+    display: flex;
+    height: 85%;
+
+}
+section{
+    height: 100%;
+    background-color: white;
+    width: 70%;
+}
+h2{
+    height: 5%;
+}
+.cabsection{
+    height: 15%;
+    background-color: aqua;
+
+}
+article{
+    height: 80%;
+    background-color: pink;
+}
+aside{
+    width: 30%;
+    background-color: purple;
+}
+footer{
+    background-color: gray;
+    height: 5%;
+}

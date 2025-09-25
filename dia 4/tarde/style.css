@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  
+}
+nav{
+    columns: 4;
+    position: sticky;   /* lo hace pegajoso */
+      top: 0;             /* se queda arriba */
+      background-color: #333;
+      z-index: 10;
+      
+}
+
+.caja {
+  height: 100px;
+  width: 100px;
+}
+.caja1 {
+  background-color: brown;
+  
+  
+}
+.caja2 {
+  background-color: darkblue;
+    position: sticky;
+    top: 0;
+    z-index: 20;  
+}
+.caja3 {
+  background-color: crimson;
+ 
+}
+.caja4 {
+  background-color: darkgreen;
+ 
+}
+.caja5 {
+  background-color: blueviolet;
+  
+
+}
