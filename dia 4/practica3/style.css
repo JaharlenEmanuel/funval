@@ -55,11 +55,13 @@ img{
 .segunda{
     padding-top:  80px;
     padding-left: 20px;
+    
 }
 .tercera{
     height: 300px;
     background-color: #F4F4F4;
     padding: 30px;
+    margin-bottom: 40px;
 }
 ul{
     margin: 40px;
