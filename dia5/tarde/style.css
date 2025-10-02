@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.caja{
+
+    height: 200px;
+    width: 200px;
+    background-color: brown;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ESTA MEDIDA ES CONOCIDA CM SM EN EL MUNDO DEL DESARROLLO */
+@media (min-width: 640px){
+    .caja1{
+        background-color: red;
+        color: cyan;
+        font-size: 70px;
+    }
+
+}
+@media (min-width: 768px) {
+    .caja{
+        color: blue;
+        background-color: bisque;
+        font-size: 30px;
+    }
+}
+@media (min-width: 1024px){
+    .caja{
+        background-color: chartreuse;
+        color: red;
+        font-size: 40px;
+    }
+}
+@media (min-width: 1280px){
+    .caja{
+        background-color: aqua;
+        color: black;
+        font-size: 50px;
+    }
+}
+@media (min-width: 0px){
+
+}
