@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" id="todo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Document</title>
+  </head>
+  <body class="">
+    <header
+      class="h-24 bg-cyan-300 text-white flex items-center justify-between dark:bg-cyan-300 py-2 px-4"
+    >
+      <!-- <button id="btn-dark" class="bg-green-900 p-3 rounded-2xl">
+        DARK MODE
+      </button> -->
+      <label
+        class="relative inline-flex items-center cursor-pointer scale-[60%]"
+      >
+        <input class="sr-only" type="checkbox" id="btn-dark" />
+        <div
+          class="w-20 h-10 rounded-full bg-gradient-to-r from-yellow-300 to-orange-600 peer-checked:from-blue-600 peer-checked:to-indigo-500 transition-all duration-500 after:content-['☀️'] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-8 after:w-8 after:flex after:items-center after:justify-center after:transition-all after:duration-500 peer-checked:after:translate-x-10 peer-checked:after:content-['🌙'] peer-checked:after:bg-slate-900 after:shadow-md after:text-lg"
+        ></div>
+      </label>
+      <img src="./img/logo1.png" alt="" class="h-full" />
+      <button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+    </header>
+    <main class="flex flex-col md:flex-row-reverse">
+      <div
+        class="flex flex-col p-4 bg-green-300 dark:bg-slate-500 dark:text-white md:w-[80%] md:h-full lg:w-[70%]"
+      >
+        <div class="flex items-center justify-around w-full">
+          <div
+            class="bg-white flex items-center justify-center border border-gray-600 w-56 rounded-2xl"
+          >
+            <input type="text" class="w-[80%] outline-none" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+          </div>
+          <select name="" id="" class="bg-white px-2 border border-gray-600">
+            <option value="">terror</option>
+            <option value="">novelas ligeras</option>
+            <option value="">comics</option>
+            <option value="">ciencia ficcion</option>
+          </select>
+        </div>
+        <div
+          class="cards-container w-full flex flex-col items-center justify-center py-4 gap-4"
+        >
+          <div
+            class="card w-full bg-[#fff5e8] text-gray-800 rounded-2xl shadow-lg p-4 flex flex-col items-center dark:bg-[#003d75] dark:text-[#ffffff]"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrtzNUJt35DyuAgsVnUrYvL-egZ99Zr_QPtI50qjp4GN4HxUUacICbWu4tauagE5Mp4rA&usqp=CAU"
+              alt="imagen del libro"
+              class="w-full object-contain h-96"
+            />
+            <h2 class="mt-4 text-lg font-bold text-center">
+              Harry Potter y la Piedra Filosofal
+            </h2>
+
+            <div
+              class="mt-4 border-t border-b border-gray-700 grid grid-cols-3 text-center py-3 text-sm text-gray-600 gap-5 dark:text-[#d3d3d3] dark:border-white"
+            >
+              <div>
+                <p class="font-bold">GÉNERO</p>
+                <p>Fantasía</p>
+              </div>
+              <div>
+                <p class="font-bold">AUTOR</p>
+                <p>J. K. Rowling</p>
+              </div>
+              <div>
+                <p class="font-bold">AÑO</p>
+                <p>1997</p>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-2 items-center justify-between px-4 py-3"
+            >
+              <span
+                class="text-2xl font-bold text-[#1b1b1b] dark:text-[#ffffff]"
+                >$20.00</span
+              >
+
+              <button
+                class="flex items-center gap-1 border border-gray-600 px-4 py-2 rounded-lg bg-white text-gray-800 hover:bg-[#5f361a] hover:text-white transition-colors duration-300 dark:hover:bg-[#031a2e]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0L6.75 14.25h10.5l2.25-7.5H6.75m-1.644-1.978L6.75 14.25m0 0a2.25 2.25 0 104.5 0m-4.5 0h4.5m6 0a2.25 2.25 0 104.5 0m-4.5 0h4.5"
+                  />
+                </svg>
+                Comprar
+              </button>
+            </div>
+          </div>
+          <div
+            class="card w-full bg-[#fff5e8] text-gray-800 rounded-2xl shadow-lg p-4 flex flex-col items-center dark:bg-[#003d75] dark:text-[#ffffff]"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCYc1f7I7sqQQa_2TyYBgOu8E-nIwdSQejGEXQmqY08e8Q1NjF5ss4WlhWm4rUIns5iyg&usqp=CAU"
+              alt="imagen del libro"
+              class="w-full object-contain h-96"
+            />
+            <h2 class="mt-4 text-lg font-bold text-center">
+              Harry Potter y la Camara Secreta
+            </h2>
+
+            <div
+              class="mt-4 border-t border-b border-gray-700 grid grid-cols-3 text-center py-3 text-sm text-gray-600 gap-5 dark:text-[#d3d3d3] dark:border-white"
+            >
+              <div>
+                <p class="font-bold">GÉNERO</p>
+                <p>Fantasía</p>
+              </div>
+              <div>
+                <p class="font-bold">AUTOR</p>
+                <p>J. K. Rowling</p>
+              </div>
+              <div>
+                <p class="font-bold">AÑO</p>
+                <p>2002</p>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-2 items-center justify-between px-4 py-3"
+            >
+              <span
+                class="text-2xl font-bold text-[#1b1b1b] dark:text-[#ffffff]"
+                >$20.00</span
+              >
+
+              <button
+                class="flex items-center gap-1 border border-gray-600 px-4 py-2 rounded-lg bg-white text-gray-800 hover:bg-[#5f361a] hover:text-white transition-colors duration-300 dark:hover:bg-[#031a2e]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0L6.75 14.25h10.5l2.25-7.5H6.75m-1.644-1.978L6.75 14.25m0 0a2.25 2.25 0 104.5 0m-4.5 0h4.5m6 0a2.25 2.25 0 104.5 0m-4.5 0h4.5"
+                  />
+                </svg>
+                Comprar
+              </button>
+            </div>
+          </div>
+          <div
+            class="card w-full bg-[#fff5e8] text-gray-800 rounded-2xl shadow-lg p-4 flex flex-col items-center dark:bg-[#003d75] dark:text-[#ffffff]"
+          >
+            <img
+              src="https://www.lanormallibros.com.ar/media/libros/356062d53eacc14ae6cfe18de394603a.jpg"
+              alt="imagen del libro"
+              class="object-contain w-full h-96"
+            />
+            <h2 class="mt-4 text-lg font-bold text-center">
+              Harry Potter y el caliz de fuego
+            </h2>
+
+            <div
+              class="mt-4 border-t border-b border-gray-700 grid grid-cols-3 text-center py-3 text-sm text-gray-600 gap-5 dark:text-[#d3d3d3] dark:border-white"
+            >
+              <div>
+                <p class="font-bold">GÉNERO</p>
+                <p>Fantasía</p>
+              </div>
+              <div>
+                <p class="font-bold">AUTOR</p>
+                <p>J. K. Rowling</p>
+              </div>
+              <div>
+                <p class="font-bold">AÑO</p>
+                <p>2002</p>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-2 items-center justify-between px-4 py-3"
+            >
+              <span
+                class="text-2xl font-bold text-[#1b1b1b] dark:text-[#ffffff]"
+                >$20.00</span
+              >
+
+              <button
+                class="flex items-center gap-1 border border-gray-600 px-4 py-2 rounded-lg bg-white text-gray-800 hover:bg-[#5f361a] hover:text-white transition-colors duration-300 dark:hover:bg-[#031a2e]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0L6.75 14.25h10.5l2.25-7.5H6.75m-1.644-1.978L6.75 14.25m0 0a2.25 2.25 0 104.5 0m-4.5 0h4.5m6 0a2.25 2.25 0 104.5 0m-4.5 0h4.5"
+                  />
+                </svg>
+                Comprar
+              </button>
+            </div>
+          </div>
+          <div
+            class="card w-full bg-[#fff5e8] text-gray-800 rounded-2xl shadow-lg p-4 flex flex-col items-center dark:bg-[#003d75] dark:text-[#ffffff]"
+          >
+            <img
+              src="https://www.sueñosdepapel.cl/cdn/shop/products/harry-potter-y-el-prisionero-de-azkaban-harry-potter-39789878000121_2048x.jpg?v=1617138712"
+              alt="imagen del libro"
+              class="object-contain w-full h-96"
+            />
+            <h2 class="mt-4 text-sm font-bold text-center">
+              Harry Potter y el prisionero de azkaban
+            </h2>
+
+            <div
+              class="mt-4 border-t border-b border-gray-700 grid grid-cols-3 text-center py-3 text-sm text-gray-600 gap-5 dark:text-[#d3d3d3] dark:border-white"
+            >
+              <div>
+                <p class="font-bold">GÉNERO</p>
+                <p>Fantasía</p>
+              </div>
+              <div>
+                <p class="font-bold">AUTOR</p>
+                <p>J. K. Rowling</p>
+              </div>
+              <div>
+                <p class="font-bold">AÑO</p>
+                <p>2002</p>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-2 items-center justify-between px-4 py-3"
+            >
+              <span
+                class="text-2xl font-bold text-[#1b1b1b] dark:text-[#ffffff]"
+                >$20.00</span
+              >
+
+              <button
+                class="flex items-center gap-1 border border-gray-600 px-4 py-2 rounded-lg bg-white text-gray-800 hover:bg-[#5f361a] hover:text-white transition-colors duration-300 dark:hover:bg-[#031a2e]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0L6.75 14.25h10.5l2.25-7.5H6.75m-1.644-1.978L6.75 14.25m0 0a2.25 2.25 0 104.5 0m-4.5 0h4.5m6 0a2.25 2.25 0 104.5 0m-4.5 0h4.5"
+                  />
+                </svg>
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto p-6">
+        <h2 class="text-2xl font-bold mb-6 text-center">
+          Categorías de Libros
+        </h2>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Terror -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-60">
+            <div
+              class="absolute inset-0 bg-black bg-[url('https://www.lavanguardia.com/libros/images/thumbnails/2023/3/9788445014752-thumbnail.webp?v=1')] bg-contain bg-no-repeat bg-center"
+            ></div>
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div
+              class="relative z-10 p-4 flex flex-col justify-end h-full text-red-200"
+            >
+              <h3 class="text-xl font-semibold">Terror</h3>
+              <p class="text-sm">Historias escalofriantes y sobrenaturales.</p>
+            </div>
+          </div>
+          <!-- Card Fantasía -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-60">
+            <div
+              class="absolute inset-0 bg-[url('https://www.hola.com/horizon/original_aspect_ratio/e3d17acc42ec-los-dioses-del-norte-la-leyenda-del-bosque-de-jara-santamar-a-montena-.jpg')] bg-contain bg-no-repeat bg-center"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-purple-700/70 to-indigo-700/70"
+            ></div>
+            <div
+              class="relative z-10 p-6 flex flex-col justify-between h-full text-white"
+            >
+              <h3 class="text-xl font-semibold mb-2">Fantasía</h3>
+              <p class="text-sm">
+                Historias épicas llenas de magia y mundos imaginarios.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Ciencia Ficción -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-60">
+            <div
+              class="absolute inset-0 bg-[url('https://gcdn.emol.cl/literatura-fantastica/files/2019/01/Fuego-y-sangre.jpg.jpg')] bg-contain bg-no-repeat bg-center"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-sky-600/70 to-cyan-500/70"
+            ></div>
+            <div
+              class="relative z-10 p-6 flex flex-col justify-between h-full text-white"
+            >
+              <h3 class="text-xl font-semibold mb-2">Ciencia Ficción</h3>
+              <p class="text-sm">
+                Explora el futuro, el espacio y la tecnología avanzada.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Misterio -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-60">
+            <div
+              class="absolute inset-0 bg-[url('https://vader-prod.s3.amazonaws.com/1679055960-la-chica-del-tren-1626038304-64145c3c4fbda.jpg')] bg-contain bg-no-repeat bg-center"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-gray-900/80 to-black/80"
+            ></div>
+            <div
+              class="relative z-10 p-6 flex flex-col justify-between h-full text-white"
+            >
+              <h3 class="text-xl font-semibold mb-2">Misterio</h3>
+              <p class="text-sm">
+                Intrigas, secretos y enigmas que te mantendrán atento.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="h-[10%] bg-purple-600 dark:bg-slate-950 dark:text-white">
+      FOOTER
+    </footer>
+
+    <script>
+      let botoncito = document.querySelector("#btn-dark");
+      let todo = document.querySelector("#todo");
+      botoncito.addEventListener("click", function () {
+        todo.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>
