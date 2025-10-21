@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <script src="./main.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body class="h-screen w-full">
+    <!-- <div class="relative overflow-x-auto">
+      <table
+        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      >
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Procesador</th>
+            <th scope="col" class="px-6 py-3">Ram</th>
+            <th scope="col" class="px-6 py-3">Disco</th>
+            <th scope="col" class="px-6 py-3">Fuente</th>
+            <th scope="col" class="px-6 py-3">tarjeta</th>
+            <th scope="col" class="px-6 py-3">Gabinete</th>
+            <th scope="col" class="px-6 py-3">madre</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-tabla"></tbody>
+      </table>
+    </div> -->
+    <div class="relative overflow-x-auto">
+      <table
+        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      >
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Nombre</th>
+            <th scope="col" class="px-6 py-3">Edad</th>
+            <th scope="col" class="px-6 py-3">Pais</th>
+            <th scope="col" class="px-6 py-3">promedio</th>
+            <th scope="col" class="px-6 py-3">Opciones</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-tabla"></tbody>
+      </table>
+    </div>
+    <div class="w-full flex items-center justify-center mt-10">
+      <button id="btn" class="bg-green-700 text-white p-4 rounded-2xl">
+        agregar estudiante
+      </button>
+    </div>
+    <div
+      class="modal hidden fixed inset-0 bg-black/50 z-30 flex items-center justify-center"
+    >
+      <div class="bg-white relative">
+        <button id="close" class="absolute right-1 text-red-700 font-bold">
+          x
+        </button>
+        <form
+          action=""
+          class="flex flex-col p-8 rounded-2xl gap-4"
+          id="formulario-estudiante"
+        >
+          <label for="">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Juan Perez"
+            class="bg-gray-200 px-2 rounded-md"
+          />
+          <label for="">Edad:</label>
+          <input
+            type="number"
+            name="edad"
+            placeholder="33"
+            class="bg-gray-200 px-2 rounded-md"
+          />
+          <label for="">Pais:</label>
+          <input
+            type="text"
+            name="pais"
+            placeholder="Argentina"
+            class="bg-gray-200 px-2 rounded-md"
+          />
+          <button class="bg-blue-700 text-white rounded-2xl p-2">crear</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

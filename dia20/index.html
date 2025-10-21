@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Cambio - Conversor de Monedas</title>
+</head>
+<body class="bg-gray-100 min-h-screen py-8">
+    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
+        <!-- Encabezado -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">Casa de Cambio Internacional</h1>
+            <p class="text-gray-600 mt-2">Conversor de monedas para viajeros</p>
+        </div>
+
+        <!-- Formulario -->
+        <form id="formularioCambio" class="space-y-6">
+            <!-- Nombre -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Nombre del Cliente</label>
+                <input type="text" id="nombre" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Ingresa tu nombre completo">
+            </div>
+
+            <!-- País de Origen -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">País de Origen</label>
+                <select id="paisOrigen" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">Selecciona tu país de origen</option>
+                    <option value="Peru">Perú</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Argentina">Argentina</option>
+                </select>
+            </div>
+
+            <!-- País Destino -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">País Destino</label>
+                <select id="paisDestino" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">Selecciona el país destino</option>
+                    <option value="Peru">Perú</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Argentina">Argentina</option>
+                </select>
+            </div>
+
+            <!-- Cantidad de Dinero -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Cantidad de Dinero</label>
+                <input type="number" id="cantidad" required min="0" step="0.01"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Ingresa la cantidad a convertir">
+            </div>
+
+            <!-- Botón de conversión -->
+            <button type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200">
+                Calcular Conversión
+            </button>
+        </form>
+
+        <!-- Resultado -->
+        <div id="resultado" class="mt-8 p-6 bg-green-50 border border-green-200 rounded-lg hidden">
+            <h3 class="text-xl font-semibold text-green-800 mb-4">Resultado de la Conversión</h3>
+            <div class="space-y-2 text-green-700">
+                <p><strong>Cliente:</strong> <span id="resultadoNombre"></span></p>
+                <p><strong>Origen:</strong> <span id="resultadoOrigen"></span></p>
+                <p><strong>Destino:</strong> <span id="resultadoDestino"></span></p>
+                <p><strong>Cantidad original:</strong> <span id="resultadoCantidad"></span></p>
+                <p class="text-lg font-bold mt-4">Cantidad convertida: <span id="resultadoConvertido"></span></p>
+            </div>
+        </div>
+
+        <!-- Tasas de cambio (información) -->
+        <div class="mt-8 p-4 bg-gray-50 rounded-lg">
+            <h4 class="font-semibold text-gray-700 mb-2">Tasas de Cambio Aproximadas:</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+                <li>🇵🇪 1 PEN (Sol Peruano) = 0.26 USD</li>
+                <li>🇨🇱 1 CLP (Peso Chileno) = 0.0011 USD</li>
+                <li>🇦🇷 1 ARS (Peso Argentino) = 0.0012 USD</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

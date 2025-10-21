@@ -557,29 +557,29 @@
 // */
 // // RESPUESTA AQUÍ 👇
 
-// console.log("======= Ejercicio 37 =======");
+console.log("======= Ejercicio 37 =======");
 
-// let usuario, contrasena;
-// let contador = 0;
-// let permitido = false;
+let usuario, contrasena;
+let contador = 0;
+let permitido = false;
 
-// do {
-//   usuario = prompt("Ingrese su usuario:");
-//   contrasena = prompt("Ingrese su contraseña:");
-//   contador++;
+do {
+  usuario = prompt("Ingrese su usuario:");
+  contrasena = prompt("Ingrese su contraseña:");
+  contador++;
 
-//   if (usuario === "admin" && contrasena === "1234") {
-//     alert("¡Acceso concedido! Bienvenido " + usuario);
-//     permitido = true;
-//     break;
-//   } else {
-//     alert("Credenciales incorrectas. Intento " + contador + " de 3.");
-//   }
-// } while (contador < 3 && !permitido);
+  if (usuario === "admin" && contrasena === "1234") {
+    alert("¡Acceso concedido! Bienvenido " + usuario);
+    permitido = true;
+    break;
+  } else {
+    alert("Credenciales incorrectas. Intento " + contador + " de 3.");
+  }
+} while (contador < 3);
 
-// if (!permitido) {
-//   alert("Acceso bloqueado ");
-// }
+if (!permitido) {
+  alert("Acceso bloqueado ");
+}
 
 
 // /*
