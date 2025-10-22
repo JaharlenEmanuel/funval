@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica Calificada 10 - Promesas</title>
+<script type="module" src="./main.js" defer></script>
+<link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+
+  <h1 class="text-3xl font-bold mb-6 text-gray-800">🛍️ Lista de Productos</h1>
+
+  <!-- Campo de búsqueda -->
+  <input 
+    type="text" 
+    id="filtro" 
+    placeholder="Filtrar por nombre o categoría..." 
+    class="mb-6 w-full max-w-md p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+  />
+
+  <!-- Contenedor de productos -->
+  <div id="container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl"></div>
+
+  <!-- Mensaje de error -->
+  <div id="error" class="hidden mt-6 text-red-600 font-semibold"></div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./main.js" defer></script>
+<link rel="stylesheet" href="./output.css">
+  <title>Gestor de Tareas - Práctica 9</title>
+
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+  <div class="bg-white shadow-lg rounded-2xl w-full max-w-md p-6">
+    <h1 class="text-2xl font-bold text-center mb-4 text-blue-600">Gestor de Tareas</h1>
+
+    <!-- Campo de entrada -->
+    <div class="flex gap-2 mb-4">
+      <input id="tareaInput" 
+             type="text" 
+             placeholder="Escribe una nueva tarea..." 
+             class="flex-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      <button id="agregarBtn" 
+              class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-4 py-2 transition">
+        Agregar
+      </button>
+    </div>
+
+    <!-- Filtros -->
+    <div class="flex justify-center gap-2 mb-4">
+      <button data-filtro="todas" class="filtro bg-blue-600 text-white px-3 py-1 rounded-lg text-sm">Todas</button>
+      <button data-filtro="pendientes" class="filtro bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded-lg text-sm">Pendientes</button>
+      <button data-filtro="completadas" class="filtro bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded-lg text-sm">Completadas</button>
+    </div>
+
+    <!-- Lista de tareas -->
+    <ul id="listaTareas" class="space-y-3"></ul>
+  </div>
+
+  <!-- Modal de edición -->
+  <div id="modalEditar" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl w-80 shadow-lg">
+      <h2 class="text-lg font-semibold mb-3 text-gray-700">Editar tarea</h2>
+      <input type="text" id="editarInput" 
+             class="w-full border border-gray-300 rounded-lg p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      <div class="flex justify-end gap-2">
+        <button id="cancelarEditar" 
+                class="px-4 py-2 rounded-lg bg-gray-300 hover:bg-gray-400">Cancelar</button>
+        <button id="guardarEditar" 
+                class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
