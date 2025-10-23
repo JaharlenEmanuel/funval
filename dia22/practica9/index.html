@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="./main.js" defer></script>
-<link rel="stylesheet" href="./output.css">
-  <title>Gestor de Tareas - Práctica 9</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="./output.css">
+  <script type="module" src="./main.js" defer></script>
+  <style>
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col items-center transition-all duration-500">
 
-  <div class="bg-white shadow-lg rounded-2xl w-full max-w-md p-6">
-    <h1 class="text-2xl font-bold text-center mb-4 text-blue-600">Gestor de Tareas</h1>
-
-    <!-- Campo de entrada -->
-    <div class="flex gap-2 mb-4">
-      <input id="tareaInput" 
-             type="text" 
-             placeholder="Escribe una nueva tarea..." 
-             class="flex-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-      <button id="agregarBtn" 
-              class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-4 py-2 transition">
-        Agregar
+  <!-- Header -->
+  <header class="w-full bg-[url('https://res.cloudinary.com/dz209s6jk/image/upload/v1607618204/Challenges/q8uzpwj4pcjy8uhzzmjz.jpg')] bg-cover bg-center h-56 flex items-center justify-center">
+    <div class="flex justify-between items-center w-11/12 max-w-md">
+      <h1 class="text-4xl font-bold tracking-[10px] text-blue-400 uppercase">LISTA DE TAREAS</h1>
+      <button id="themeToggle" class="text-white text-xl">
+        🌙
       </button>
     </div>
+  </header>
 
-    <!-- Filtros -->
-    <div class="flex justify-center gap-2 mb-4">
-      <button data-filtro="todas" class="filtro bg-blue-600 text-white px-3 py-1 rounded-lg text-sm">Todas</button>
-      <button data-filtro="pendientes" class="filtro bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded-lg text-sm">Pendientes</button>
-      <button data-filtro="completadas" class="filtro bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded-lg text-sm">Completadas</button>
+  <!-- Main -->
+  <main class="w-11/12 max-w-md mt-[-3rem]">
+    <!-- Input para nueva tarea -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg flex items-center px-4 py-3 mb-5">
+      <input id="newTodo" type="text" placeholder="Crear una nueva tarea..." class="w-full bg-transparent focus:outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400">
     </div>
+
 
     <!-- Lista de tareas -->
-    <ul id="listaTareas" class="space-y-3"></ul>
-  </div>
+    <ul id="todoList" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg divide-y divide-gray-200 dark:divide-gray-700"></ul>
 
-  <!-- Modal de edición -->
-  <div id="modalEditar" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white p-6 rounded-xl w-80 shadow-lg">
-      <h2 class="text-lg font-semibold mb-3 text-gray-700">Editar tarea</h2>
-      <input type="text" id="editarInput" 
-             class="w-full border border-gray-300 rounded-lg p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-      <div class="flex justify-end gap-2">
-        <button id="cancelarEditar" 
-                class="px-4 py-2 rounded-lg bg-gray-300 hover:bg-gray-400">Cancelar</button>
-        <button id="guardarEditar" 
-                class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white">Guardar</button>
+    <!-- Footer -->
+    <div id="footer" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg flex justify-between items-center text-sm text-gray-500 dark:text-gray-400 px-4 py-3 mt-4">
+      <span id="itemsLeft">0 tareas restantes</span>
+      <div class="flex space-x-3">
+        <button class="filter-btn text-blue-500" data-filter="all">Todas</button>
+        <button class="filter-btn hover:text-blue-500" data-filter="active">Activas</button>
+        <button class="filter-btn hover:text-blue-500" data-filter="completed">Completadas</button>
       </div>
+      <button id="clearCompleted" class="hover:text-red-500">Borrar completadas</button>
     </div>
-  </div>
+  </main>
 
+  <!-- Footer info -->
+  <footer class="mt-8 text-gray-400 text-sm text-center">
+    <p>Arrastra y suelta para reordenar la lista (próximamente)</p>
+  </footer>
 </body>
 </html>

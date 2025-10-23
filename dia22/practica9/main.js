@@ -1,103 +1,156 @@
-let lista = document.querySelector("#listaTareas");
-let input = document.querySelector("#tareaInput");
-let modal = document.querySelector("#modalEditar");
-let editarInput = document.querySelector("#editarInput");
-let guardarBtn = document.querySelector("#guardarEditar");
-let cancelarBtn = document.querySelector("#cancelarEditar");
+// ======== Selección de elementos ========
+const newTodoInput = document.getElementById("newTodo");
+const todoList = document.getElementById("todoList");
+const itemsLeft = document.getElementById("itemsLeft");
+const clearCompletedBtn = document.getElementById("clearCompleted");
+const filterBtns = document.querySelectorAll(".filter-btn");
+const themeToggle = document.getElementById("themeToggle");
 
-let tareas = [];
-let filtroActual = "todas";
-let tareaEditando = null;
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+let filter = "all"; // all | active | completed
 
-// Delegación de eventos principal
-document.addEventListener("click", (e) => {
-    let target = e.target;
+// ======== Funciones principales ========
 
-    // Agregar tarea
-    if (target.id === "agregarBtn") {
-        let texto = input.value.trim();
-        if (texto) {
-            tareas.push({ texto, completada: false });
-            input.value = "";
-            renderTareas();
-        }
-    }
+// Renderizar la lista de tareas
+function renderTodos() {
+    todoList.innerHTML = "";
 
-    // Eliminar tarea
-    if (target.classList.contains("eliminar")) {
-        let index = target.closest("li").dataset.index;
-        tareas.splice(index, 1);
-        renderTareas();
-    }
-
-    // Marcar como completada
-    if (target.classList.contains("check")) {
-        let index = target.closest("li").dataset.index;
-        tareas[index].completada = !tareas[index].completada;
-        renderTareas();
-    }
-
-    // Abrir modal de edición
-    if (target.classList.contains("editar")) {
-        let index = target.closest("li").dataset.index;
-        tareaEditando = index;
-        editarInput.value = tareas[index].texto;
-        modal.classList.remove("hidden");
-    }
-
-    // Filtros
-    if (target.dataset.filtro) {
-        filtroActual = target.dataset.filtro;
-        document.querySelectorAll(".filtro").forEach(btn => {
-            btn.classList.remove("bg-blue-600", "text-white");
-            btn.classList.add("bg-gray-200");
-        });
-        target.classList.add("bg-blue-600", "text-white");
-        renderTareas();
-    }
-});
-
-// Guardar cambios desde modal
-guardarBtn.addEventListener("click", () => {
-    let nuevoTexto = editarInput.value.trim();
-    if (nuevoTexto && tareaEditando !== null) {
-        tareas[tareaEditando].texto = nuevoTexto;
-        tareaEditando = null;
-        modal.classList.add("hidden");
-        renderTareas();
-    }
-});
-
-// Cancelar edición
-cancelarBtn.addEventListener("click", () => {
-    tareaEditando = null;
-    modal.classList.add("hidden");
-});
-
-function renderTareas() {
-    lista.innerHTML = "";
-    let tareasFiltradas = tareas.filter(t => {
-        if (filtroActual === "pendientes") return !t.completada;
-        if (filtroActual === "completadas") return t.completada;
+    let filtered = todos.filter(todo => {
+        if (filter === "active") return !todo.completed;
+        if (filter === "completed") return todo.completed;
         return true;
     });
 
-    tareasFiltradas.forEach((tarea, i) => {
-        let li = document.createElement("li");
-        li.dataset.index = i;
-        li.className = `flex justify-between items-center p-3 border rounded-lg shadow-sm transition ${tarea.completada ? "bg-green-100" : "bg-gray-50"
-            }`;
+    filtered.forEach((todo, index) => {
+        const li = document.createElement("li");
+        li.className = "flex items-center justify-between px-4 py-3 group";
 
         li.innerHTML = `
-      <span class="flex-1 ${tarea.completada ? "line-through text-gray-500" : "text-gray-800"
-            }">${tarea.texto}</span>
-      <div class="flex gap-2">
-        <button class="check bg-green-500 hover:bg-green-600 text-white rounded-lg px-2 py-1 text-sm">✔</button>
-        <button class="editar bg-yellow-400 hover:bg-yellow-500 text-white rounded-lg px-2 py-1 text-sm">✏️</button>
-        <button class="eliminar bg-red-500 hover:bg-red-600 text-white rounded-lg px-2 py-1 text-sm">🗑️</button>
+      <div class="flex items-center space-x-3">
+        <input type="checkbox" class="todo-check h-5 w-5" ${todo.completed ? "checked" : ""} data-index="${index}">
+        <span class="todo-text text-base break-all ${todo.completed ? "line-through text-gray-400" : ""}" data-index="${index}">
+          ${todo.text}
+        </span>
+      </div>
+      <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition">
+        <button class="edit-btn text-green-500 hover:text-green-700" data-index="${index}">✏️</button>
+        <button class="delete-btn text-red-500 hover:text-red-700" data-index="${index}">❌</button>
       </div>
     `;
-
-        lista.appendChild(li);
+        todoList.appendChild(li);
     });
+
+    updateItemsLeft();
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
+
+// Contar tareas activas
+function updateItemsLeft() {
+    const count = todos.filter(todo => !todo.completed).length;
+    itemsLeft.textContent = `${count} ${count === 1 ? "tarea" : "tareas"} restantes`;
+}
+
+// ======== Eventos ========
+
+// Agregar tarea al presionar Enter
+newTodoInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        const text = newTodoInput.value.trim();
+        if (text === "") return;
+        todos.push({ text, completed: false });
+        newTodoInput.value = "";
+        renderTodos();
+    }
+});
+
+// Delegación de eventos (completar, eliminar, editar)
+todoList.addEventListener("click", (e) => {
+    const index = e.target.dataset.index;
+
+    // Marcar completada
+    if (e.target.classList.contains("todo-check")) {
+        todos[index].completed = !todos[index].completed;
+        renderTodos();
+    }
+
+    // Eliminar tarea
+    if (e.target.classList.contains("delete-btn")) {
+        todos.splice(index, 1);
+        renderTodos();
+    }
+
+    // Editar tarea
+    if (e.target.classList.contains("edit-btn")) {
+        startEditing(index);
+    }
+});
+
+// ======== Función para editar ========
+function startEditing(index) {
+    const li = todoList.children[index];
+    const todo = todos[index];
+    const textSpan = li.querySelector(".todo-text");
+
+    // Crear input temporal
+    const input = document.createElement("input");
+    input.type = "text";
+    input.value = todo.text;
+    input.className = "bg-transparent border-b border-blue-400 focus:outline-none w-full text-base dark:text-gray-200";
+
+    textSpan.replaceWith(input);
+    input.focus();
+
+    // Guardar al presionar Enter o perder el foco
+    input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") finishEditing(index, input);
+    });
+    input.addEventListener("blur", () => finishEditing(index, input));
+}
+
+function finishEditing(index, input) {
+    const newText = input.value.trim();
+
+    if (newText === "") {
+        todos.splice(index, 1);
+    } else {
+        todos[index].text = newText;
+    }
+
+    renderTodos();
+}
+
+// ======== Filtros ========
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("text-blue-500"));
+        btn.classList.add("text-blue-500");
+        filter = btn.dataset.filter;
+        renderTodos();
+    });
+});
+
+// ======== Borrar completadas ========
+clearCompletedBtn.addEventListener("click", () => {
+    todos = todos.filter(todo => !todo.completed);
+    renderTodos();
+});
+
+// ======== Tema oscuro / claro ========
+themeToggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    const isDark = document.documentElement.classList.contains("dark");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+// Cargar tema guardado
+(function loadTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        themeToggle.textContent = "☀️";
+    }
+})();
+
+// ======== Inicializar ========
+renderTodos();
